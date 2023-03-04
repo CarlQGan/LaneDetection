@@ -2,6 +2,8 @@
 File Structure:
 
 input_vid/ -- where you put your video pending to be sliced
+Example file format:
+<racetrack_name>_pov_<year>_<sportseries>_<firstname>_<lastname>.mp4
 out/ -- the output images will be generated here under a folder having the same name as the video
 
 ------------
