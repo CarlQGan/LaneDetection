@@ -1,8 +1,12 @@
-Example Usage:
+------------
+File Structure:
 
 input_vid/ -- where you put your video pending to be sliced
 out/ -- the output images will be generated here under a folder having the same name as the video
 
-in the root folder of this package, run `python3 video_slicer.py`
+------------
+Example Usage:
 
-Currently, you will need to change the variable on line 49 `video_filename` for your use.
+In the root folder of this package, run `python3 video_slicer.py <video_filename>.mp4 <frame_interval>`
+
+For example, 'python3 video_slicer.py input_vid/monza_pov_2022_f1_guanyu_zhou.mp4 100'

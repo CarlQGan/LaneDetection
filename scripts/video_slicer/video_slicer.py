@@ -1,10 +1,7 @@
+import argparse
 import cv2
 import os
 
-
-"""
-This function takes in an input video and slices the 
-"""
 def slice_video(video_path, output_folder, interval):
     # Open the video file
     cap = cv2.VideoCapture(video_path)
@@ -44,16 +41,18 @@ def slice_video(video_path, output_folder, interval):
     # Release the video file
     cap.release()
 
-# Example usage
-# Directory where the input video is located at
-video_folder = "input_vid/"
+# Parse command line arguments
+parser = argparse.ArgumentParser()
+parser.add_argument("video_path", help="Path to the video file to slice")
+parser.add_argument("interval", type=int, help="Number of frames to wait between capturing each image")
+args = parser.parse_args()
 
-# Specify the filename
-video_filename = "monza_pov_2022_f1_guanyu_zhou.mp4"
+# Get video filename and create output folder
+video_filename = os.path.basename(args.video_path)
+output_folder = os.path.join("out", video_filename[:-4])
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
 
-video_path = video_folder + video_filename
-output_folder = "out/" + video_filename[:-4] + "/"
-
-# Customize the interval (frames)
-interval = 1000
-slice_video(video_path, output_folder, interval)
+# Slice the video
+input_path = os.path.join("input_vid", video_filename)
+slice_video(input_path, output_folder, args.interval)
