@@ -45,9 +45,15 @@ def slice_video(video_path, output_folder, interval):
     cap.release()
 
 # Example usage
+# Directory where the input video is located at
 video_folder = "input_vid/"
+
+# Specify the filename
 video_filename = "monza_pov_2022_f1_guanyu_zhou.mp4"
+
 video_path = video_folder + video_filename
 output_folder = "out/" + video_filename[:-4] + "/"
+
+# Customize the interval (frames)
 interval = 1000
 slice_video(video_path, output_folder, interval)
