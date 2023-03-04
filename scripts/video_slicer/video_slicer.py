@@ -49,7 +49,7 @@ args = parser.parse_args()
 
 # Get video filename and create output folder
 video_filename = os.path.basename(args.video_path)
-output_folder = os.path.join("out", video_filename[:-4])
+output_folder = os.path.join("out", video_filename[:-4] + "_" + str(args.interval))
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
