@@ -1,3 +1,0 @@
-[submodule "lanenet-lane-detection"]
-	path = lanenet-lane-detection
-	url = git@github.com:MaybeShewill-CV/lanenet-lane-detection.git
